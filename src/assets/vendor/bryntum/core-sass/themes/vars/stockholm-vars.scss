@@ -1,0 +1,147 @@
+@use "sass:math";
+@import '../../icon-font';
+@import '../../../fontawesome/scss/variables';
+
+// Embed theme details in content.
+// See DomHelper#themeInfo
+.b-theme-info:before {
+    content : '{"name":"Stockholm"}';
+}
+
+// redefine variables here
+$indigo                                 : $c-blue-dark;
+$blue                                   : $c-blue-dark;
+$teal                                   : $c-brand-light;
+$light-green                            : $c-brand-light;
+$green                                  : $c-brand;
+$lime                                   : $c-brand-lighter;
+$yellow                                 : $c-yellow-light;
+$amber                                  : $c-yellow;
+$orange                                 : $c-yellow-dark;
+$deep-orange                            : $c-red-light;
+$red                                    : $c-red;
+$purple                                 : #fe31ea;
+
+$light-gray                             : $c-grey-light;
+$gray                                   : $c-grey;
+$dark-gray                              : $c-grey-darker;
+
+$main-color                             : $c-brand-dark;
+$secondary-color                        : $c-brand-light;
+
+$stockholm-font-weight                  : 500;
+$stockholm-light-fill                   : $c-grey-lighter;
+
+$widget-border-width                    : 0;
+$widget-border-color                    : $c-grey-light;
+$widget-text-dark-color                 : $c-grey-dark;
+$widget-text-bright-color               : $c-white;
+$widget-highlight-color                 : fade_out($main-color, .4);
+$widget-disabled-border-color           : $c-white;
+
+$panel-background-color                 : $c-grey-lighter;
+$panel-color                            : $widget-text-dark-color;
+$panel-header-color                     : $panel-color;
+$panel-header-background-color          : $stockholm-light-fill;
+$panel-header-font-size                 : 1.2em;
+$panel-header-font-weight               : $stockholm-font-weight;
+$panel-header-border-bottom             : 1px solid $main-color;
+$panel-tool-color                       : $panel-color;
+$panel-toolbar-top-border-bottom        : 1px solid $c-grey-light;
+$panel-toolbar-background-color         : $c-grey-lighter;
+
+$tooltip-color                          : $panel-color;
+$tooltip-side-header-font-size          : 1em;
+$list-color                             : $panel-color;
+
+$field-trigger-color                    : $c-grey;
+$list-highlight-color                   : fade-out($main-color, 0.7);
+
+$percent-bar-fill                       : $green;
+
+$float-box-shadow                       : 2px 2px 6px rgba(0, 0, 0, 0.1);
+
+$button-min-height                      : $space-8;
+$button-text-transform                  : uppercase;
+$button-toolbar-font-size               : .9em;
+$button-disabled-color                  : $c-grey;
+$button-hover-color                     : $c-white;
+
+$checkbox-checked-box-color             : $dark-gray;
+$checkbox-box-background-color          : $c-white;
+$checkbox-box-border-color              : $widget-border-color;
+$checkbox-checked-box-background-color  : $checkbox-box-background-color;
+$checkbox-checked-box-border-color      : $widget-border-color;
+$checkbox-disabled-box-background-color : $c-grey-light;
+$checkbox-disabled-box-border-color     : $widget-border-color;
+
+$datepicker-background-color            : $light-gray;
+
+$container-label-color                  : $c-grey-dark;
+$field-container-active-label-color     : $c-grey-darker;
+$field-container-margin-left            : .3em;
+$field-trigger-font-size                : .9em;
+
+$label-text-transform                   : uppercase;
+$label-font-size                        : .9em;
+$label-text-align                       : right;
+
+$float-box-shadow                       : 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.24);
+$aligned-above-float-box-shadow         : -3px -1px 6px rgba(0, 0, 0, 0.12), 3px -2px 6px rgba(0, 0, 0, 0.24);
+
+$menu-color                             : $panel-color;
+$menu-background-color                  : $c-white;
+$menu-highlight-color                   : $list-highlight-color;
+$menu-item-border-color                 : $light-gray;
+$menu-item-separator-color              : darken($light-gray, 10);
+
+$list-item-border-color                 : $menu-item-border-color;
+
+$slider-thumb-color                     : $secondary-color;
+$slider-contrast                        : 30%;
+$slider-label-font-size                 : .8em;
+
+$container-color                        : $panel-color;
+
+$splitter-background-color              : lighten($gray, 20%);
+
+$tabpanel-background-color              : transparent;
+
+$tabpanel-body-padding                  : 1em 0;
+
+$tabpanel-tabs-border-bottom            : 1px solid $main-color;
+
+$tabpanel-tab-color                     : lighten($container-label-color, 10%);
+$tabpanel-tab-active-color              : $container-label-color;
+$tabpanel-tab-hover-color               : $container-label-color;
+$tabpanel-tab-active-color              : darken($container-label-color, 15%);
+$tabpanel-tab-active-background-color   : $stockholm-light-fill;
+$tabpanel-tab-hover-background-color    : $stockholm-light-fill;
+$tabpanel-tab-text-transform            : uppercase;
+$tabpanel-tab-font-weight               : $stockholm-font-weight;
+$tabpanel-tab-font-size                 : .9em;
+$tabpanel-tab-border-width              : 0;
+$tabpanel-tab-padding                   : 0.9em;
+
+$tabpanel-border-width                  : 0;
+
+$toast-color                            : $panel-color;
+
+//region Checkbox color
+
+.b-slidetoggle .b-slidetoggle-label,
+:not(.b-fieldset-has-label) > .b-checkbox .b-checkbox-label {
+    text-transform : $label-text-transform;
+    font-size      : $label-font-size;
+
+    &::before {
+        font-size : math.div(1em, $label-font-size) * 1em;
+    }
+}
+
+//endregion
+
+// Popups own bbar uses same background as the popup
+.b-popup > .b-panel-body-wrap > .b-bottom-toolbar {
+    background : $panel-background-color;
+}

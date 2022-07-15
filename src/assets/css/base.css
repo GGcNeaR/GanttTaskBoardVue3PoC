@@ -1,0 +1,55 @@
+:root {
+
+  --font-default: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Helvetica", "Verdana", sans-serif;
+  --font-base: normal 500 var(--base-size) / 1.2 var(--base-family), var(--font-default);
+  --font-content: normal 500 var(--sm-size) / 1.2 var(--base-family), var(--font-default);
+  --font-h4: normal 600 var(--h-4-size) / 1.2 var(--h-4-family), var(--font-default);
+  --font-label: normal 500 var(--xs-size) / 1.2 var(--xs-family), var(--font-default);
+
+  --c-green: var(--c-brand);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.667rem;
+  --space-4: 1rem;
+  --space-5: 1.333rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-48: 12rem;
+  --space-64: 16rem;
+  --space-96: 24rem;
+
+  --space-n1: -0.25rem;
+  --space-n2: -0.5rem;
+  --space-n3: -0.667rem;
+  --space-n4: -1rem;
+  --space-n5: -1.333rem;
+  --space-n6: -1.5rem;
+  --space-n8: -2rem;
+  --space-n10: -2.5rem;
+  --space-n12: -3rem;
+  --space-n16: -4rem;
+  --space-n24: -6rem;
+  --space-n32: -8rem;
+  --space-n48: -12rem;
+  --space-n64: -16rem;
+  --space-n96: -24rem;
+
+  --gap: var(--space-4);
+  --half-gap: calc(var(--gap) / 2);
+  --quarter-gap: calc(var(--gap) / 4);
+  --double-gap: calc(var(--gap) * 2);
+
+  --border-radius: var(--space-1);
+
+  --focus-outline: 2px dotted var(--c-red);
+  --focus-shadow: 0 0 0 2px var(--c-brand-light);
+  --selected-outline: 2px solid var(--c-brand);
+
+  --trans-fast: 0.25s ease-out;
+}

@@ -1,26 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+	<GanttTaskBoard />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+	import GanttTaskBoard from './components/GanttTaskBoard.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+	name: 'App',
+	components: {
+		GanttTaskBoard
+	}
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+<style lang="scss">
+	@import "@/assets/css/variables.scss";
+    @import "@/assets/vendor/bryntum/sass/themes/stockholm.scss";
+</style>
+
+
+<style lang="postcss">
+    @import "@bryntum/taskboard/taskboard.stockholm.css";
+
+    butt
+    #app {
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      grid-template-rows: min-content 1fr var(--space-6);
+      font: var(--font-base);
+      color: var(--c-grey-darkest);
+      background-color: var(--c-grey-lighter);
+    }
+
 </style>

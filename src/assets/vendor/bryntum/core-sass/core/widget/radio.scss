@@ -1,0 +1,88 @@
+@import '../../variables';
+
+// In firefox on a Windows machine that scale 125% this fixes bad box-shadow rendering. Should test in more browsers.
+@media screen and (min-resolution: 120dpi) {
+    .b-firefox .b-radio input {
+        transform : rotate(1deg);
+        margin    : calc(#{$radio-border-width} + 0.5px);
+    }
+}
+
+.b-radio {
+
+    input[type=radio] {
+        border-radius      : 50%;
+        box-shadow         : 0 0 0 $radio-border-width $radio-border-color;
+        border             : .25em solid $radio-background-color;
+        background-color   : $radio-background-color;
+        height             : $radio-size;
+        width              : $radio-size;
+        /* Margin as large as border so not to be clipped by overflow hidden parent el */
+        margin             : $radio-border-width;
+        z-index            : 1;
+        // Safari
+        -webkit-appearance : none;
+        appearance         : none;
+        cursor             : pointer;
+    }
+
+    /* forcing keyboard focus appearance */
+    input[type=radio]:focus-visible{
+        outline        : $radio-border-width solid $widget-highlight-color;
+        outline-offset : 0;
+    }
+
+    input[type=radio]:checked {
+        background-color : $radio-checked-dot-color;
+    }
+
+    &.b-disabled input[type=radio] {
+        box-shadow       : 0 0 0 $radio-border-width $radio-disabled-border-color;
+        background-color : $radio-disabled-background-color;
+    }
+
+    > .b-field-inner label.b-radio-label {
+        margin-inline-start : .4em;
+    }
+
+    /* Overrides checkbox css */
+    > .b-field-inner label.b-radio-label:before {
+        content : none;
+    }
+}
+
+@mixin radio-color($colorName, $color, $uncheckedOpacity : .1) {
+    .b-radio.b-#{$colorName} {
+        input[type=radio] {
+            box-shadow       : 0 0 0 $radio-border-width $color;
+            background-color : rgba($color, $uncheckedOpacity);
+        }
+
+        input[type=radio]:checked {
+            background-color : $color;
+        }
+
+        &.b-disabled input[type=radio] {
+            box-shadow       : 0 0 0 $radio-border-width rgba($color, .2);
+            background-color : transparent;
+        }
+    }
+}
+
+@include radio-color('blue', $blue);
+@include radio-color('deep-orange', $deep-orange);
+@include radio-color('orange', $orange);
+@include radio-color('indigo', $indigo);
+@include radio-color('green', $green);
+@include radio-color('purple', $purple);
+@include radio-color('yellow', $yellow);
+@include radio-color('red', $red);
+@include radio-color('amber', $amber);
+@include radio-color('lime', $lime);
+@include radio-color('teal', $teal);
+@include radio-color('light-green', $light-green);
+@include radio-color('purple', $purple);
+
+
+
+

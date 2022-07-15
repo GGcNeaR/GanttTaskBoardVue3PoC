@@ -1,0 +1,20 @@
+.b-sch-vertical .b-sch-event-wrap.b-milestone-wrap {
+    transform   : translateY(-50%);
+    margin-left : 0;
+    height      : 1em;
+
+    .b-sch-event {
+        padding-left : 0;
+        width        : 100%;
+
+        .b-sch-event-content {
+            justify-content : center;
+            margin          : 0;
+
+            label {
+                left : unset;
+                top  : 105%;
+            }
+        }
+    }
+}
