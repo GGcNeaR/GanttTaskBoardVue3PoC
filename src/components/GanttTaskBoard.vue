@@ -58,21 +58,25 @@
 				'Done',
 				'Cancelled'
 			],
-			columnField: 'status'
+			columnField: 'status',
+			features: {
+				taskEdit: {
+					// Prevent TaskBoard's task editor from showing and display Gantt's instead
+					processItems({ taskRecord }) {
+						bryntumGantt.value.instance.value.editTask(taskRecord); // replace this.gantt with your gantt reference
+
+						return false;
+					}
+				}
+			}
 		};
 	};
 	const taskBoardConfig = reactive(useTaskBoardConfig());
 
-	//onMounted(() => {
-	//	// Link TaskBoard to Gantt, expected by Gantt's taskRenderer etc
-	//	bryntumGantt.value.taskBoard = bryntumTaskBoard.value;
-	//	// And vice versa
-	//	bryntumTaskBoard.value.gantt = bryntumGantt.value;
-	//});	
-
 </script>
 
 <style>
+	html, body,
 	.content-body {
 		background-color: var(--c-grey-lighter);
 		height: 100%;

@@ -23,7 +23,6 @@ export default {
 <style lang="postcss">
     @import "@bryntum/taskboard/taskboard.stockholm.css";
 
-    butt
     #app {
       width: 100%;
       height: 100vh;
